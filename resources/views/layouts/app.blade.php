@@ -233,7 +233,7 @@
         
         <ul class="sidebar-menu">
             <li>
-                <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboardz') ? 'active' : '' }}">
                     <i class="fas fa-home text-primary"></i> Dashboard
                 </a>
             </li>

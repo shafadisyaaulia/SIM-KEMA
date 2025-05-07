@@ -7,10 +7,10 @@ use App\Models\Dokumentasi;
 
 class DokumentasiController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     
     public function index()
     {
