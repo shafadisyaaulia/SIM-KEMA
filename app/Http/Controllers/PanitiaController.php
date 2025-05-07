@@ -13,24 +13,24 @@ class PanitiaController extends Controller
     // {
     //     $this->middleware('auth');
     // }
-    
+
     public function index()
     {
         $kegiatan = Kegiatan::all();
         return view('daftar_kepanitiaan', compact('kegiatan'));
     }
-    
+
     public function daftarKepanitiaan()
     {
         $kegiatan = Kegiatan::all();
         return view('daftar_kegiatan', compact('kegiatan'));
     }
-    
+
     public function formulirPendaftaran(Kegiatan $kegiatan)
     {
         return view('formulir_pendaftaran', compact('kegiatan'));
     }
-    
+
     public function daftar(Request $request, Kegiatan $kegiatan)
     {
         $validated = $request->validate([
@@ -40,7 +40,7 @@ class PanitiaController extends Controller
             'kegiatan_id' => 'required',
             'divisi_id' => 'required',
         ]);
-        
+
         $panitia = new Panitia();
         $panitia->user_id = Auth::id();
         $panitia->nama = $request->nama;
@@ -50,7 +50,7 @@ class PanitiaController extends Controller
         $panitia->divisi_id = $request->divisi_id;
         $panitia->status = 'pending';
         $panitia->save();
-        
+
         return redirect()->route('daftar.panitia')->with('success', 'Pendaftaran berhasil. Silakan tunggu konfirmasi.');
     }
 }
