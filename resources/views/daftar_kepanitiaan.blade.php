@@ -10,7 +10,7 @@
         <div class="col-md-12">
             <div class="event-card">
                 <h2 class="event-title">INFEST</h2>
-                <a href="{{ route('formulir.pendaftaran', ['kegiatan' => 'infestz']) }}" class="add-button">+</a>
+                <a href="{{ route('formulir.pendaftaran', ['kegiatan' => 'infest']) }}" class="add-button">+</a>
             </div>
             
             <div class="event-card">

@@ -26,7 +26,7 @@ class AuthController extends Controller
 
         Auth::login($user); // Login otomatis setelah pendaftaran
 
-        return redirect('/dashboard'); // Redirect ke halaman dashboard
+        return redirect('/'); // Redirect ke halaman dashboard
     }
 
     public function login(Request $request)
@@ -38,7 +38,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect('/dashboard');
+            return redirect('/');
         }
 
         return back()->withErrors([

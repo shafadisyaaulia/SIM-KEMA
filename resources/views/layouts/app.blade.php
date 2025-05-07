@@ -227,9 +227,10 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="sidebar-logo">
-            <img src="{{ asset('images\Logo HMIF.png') }}" alt="Logo SIM-KEMA">
+            <img src="{{ asset('assets/logo.png') }}" alt="Logo">
             <span>SIM-KEMA</span>
         </div>
+ 
         
         <ul class="sidebar-menu">
             <li>

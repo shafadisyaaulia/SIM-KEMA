@@ -7,6 +7,7 @@ use App\Http\Controllers\PanitiaController;
 use App\Http\Controllers\SertifikatController;
 use App\Http\Controllers\DokumentasiController;
 use App\Http\Controllers\PelaporanController;
+use App\Http\Controllers\AuthController;
 
 // Authentication Routes
 Auth::routes();
@@ -31,5 +32,14 @@ Route::get('/dokumentasi', [DokumentasiController::class, 'index'])->name('dokum
 Route::get('/pelaporan', [PelaporanController::class, 'index'])->name('pelaporan');
 
 Auth::routes();
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+Route::get('/register', function () {
+    return view('login-register.register');
+});
+
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/login', function () {
+    return view('login-register.login');
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
